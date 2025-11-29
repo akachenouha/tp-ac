@@ -134,24 +134,15 @@ def selection_sort(tab):
 # - intègre un chronomètre
 #############################################################################################################################
 
-
-import time
-
-
-tab = [10, 20, 30, 40, 50, 15, 70, 49]
-
-
 iterations = 0
-
 
 def merge(left, right):
     global iterations
     result = []
     i = j = 0
 
-
     while i < len(left) and j < len(right):
-        iterations += 1  
+        iterations += 1
         if left[i] < right[j]:
             result.append(left[i])
             i += 1
@@ -159,15 +150,13 @@ def merge(left, right):
             result.append(right[j])
             j += 1
 
-   
     result.extend(left[i:])
     result.extend(right[j:])
     return result
 
-
 def merge_sort(arr):
     global iterations
-    iterations += 1 
+    iterations += 1
 
     if len(arr) <= 1:
         return arr
@@ -175,23 +164,8 @@ def merge_sort(arr):
     mid = len(arr) // 2
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
-
     return merge(left, right)
 
-
-
-
-iterations = 0
-
-start = time.time()
-sorted_tab = merge_sort(tab)
-end = time.time()
-
-print("tab الأصلي =", tab)
-print("tab بعد الترتيب =", sorted_tab)
-print("عدد التكرارات =", iterations)
-print("زمن التنفيذ =", (end - start), "ثانية")
-print("تعقيد الخوارزمية = O(n log n)")
 
 #############################################################################################################################
 # QUESTION 7 – Sauvegarde du tableau trié
@@ -236,3 +210,6 @@ print(sorted_selection)
 
 
 # 6. Tri par fusion (Merge Sort)
+Merge_Sort = [10, 20, 30, 40, 50, 15, 70, 49]
+Merge_Sort = merge_sort(Merge_Sort)  # استدعاء الدالة الصحيحة
+print(Merge_Sort)
