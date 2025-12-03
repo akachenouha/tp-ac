@@ -82,7 +82,17 @@ def nombre_occurrences(values_list):
 # Objectif : réduire la complexité de O(n²) → O(n)
 #############################################################################################################################
 
-# def nombre_occurrences_ameliore(values_list):
+def nombre_occurrences_ameliore(values_list):
+    occurrences = {10, 20, 30, 40,50,15,70,49}  # Dictionnaire pour stocker l'élément et son nombre d'occurrences
+
+    for value in values_list:   # Parcours en O(n)
+        if value in occurrences:
+            occurrences[value] += 1
+        else:
+            occurrences[value] = 1
+
+    return occurrences
+
 
 
 #############################################################################################################################
@@ -210,6 +220,6 @@ print(sorted_selection)
 
 
 # 6. Tri par fusion (Merge Sort)
-Merge_Sort = [10, 20, 30, 40, 50, 15, 70, 49]
+Merge_Sort = [10, 20, 30, 40,50,15,70,49]
 Merge_Sort = merge_sort(Merge_Sort)  # استدعاء الدالة الصحيحة
 print(Merge_Sort)
